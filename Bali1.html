@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Datang di Bali</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f0f8ff;
+        }
+
+        /* Sticky Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 10px 0;
+            transition: background-color 0.3s ease;
+        }
+
+        nav:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #4a90e2;
+            font-weight: 600;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+            padding: 5px 0;
+        }
+
+        nav ul li a:hover {
+            color: #ff6347;
+        }
+
+        nav ul li::after {
+            content: '';
+            display: block;
+            height: 2px;
+            width: 100%;
+            background: #ff6347;
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        nav ul li:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #ff6347, #ff4500);
+            color: white;
+            text-align: center;
+            padding: 15em 0;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 4em;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            z-index: 2;
+        }
+
+        .container {
+            padding: 60px 20px;
+        }
+
+        /* Animasi saat Scroll */
+        .content {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 1000px;
+            border-radius: 12px;
+            display: block;
+            margin: 0 auto 30px;
+            transition: transform 0.4s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            color: #ff4500;
+            font-size: 2.8em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h3 {
+            color: #4682b4;
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        p {
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            text-align: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .grid-item {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-10px);
+            border-left: 5px solid #ff6347;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        footer .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        footer .footer-content div {
+            margin-bottom: 15px;
+        }
+
+        footer .social-icons {
+            margin-top: 20px;
+        }
+
+        footer .social-icons a {
+            text-decoration: none;
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            color: #ff6347;
+        }
+
+        /* Form Kontak di Footer */
+        .contact-form {
+            margin-top: 30px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .contact-form input[type="submit"] {
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form input[type="submit"]:hover {
+            background-color: #ff4500;
+        }
+
+        /* Responsif */
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            header h1 {
+                font-size: 3em;
+            }
+
+            .cta-button {
+                padding: 12px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Navbar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#explore">Explore</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <h2>Selamat Datang di Bali</h2>
+<header id="home" style="background-image: url('bali1.jpeg'); background-size: cover; background-position: center; color: white; text-align: center; padding: 15em 0; position: relative;">
+</header>
+
+    <!-- Konten -->
+    <div class="container" id="explore">
+        <div class="content">
+            <p>Bali adalah sebuah pulau dan provinsi di Indonesia yang terkenal secara global sebagai destinasi wisata unggulan. Pulau ini dikenal dengan keindahan alamnya yang meliputi pantai-pantai berpasir putih, sawah terasering yang hijau, serta gunung-gunung berapi. Selain keindahan alam, Bali juga terkenal dengan budayanya yang kaya, seperti tari-tarian tradisional, upacara keagamaan Hindu Bali, serta seni kerajinan tangan.</p>
+            <h3>Pantai-pantai Terkenal</h3>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="Kuta.jpg" alt="Pantai Kuta">
+                    <p>Pantai Kuta terkenal dengan ombak yang sempurna untuk berselancar serta suasana malam yang meriah. Tempat ini juga penuh dengan restoran, bar, dan toko-toko yang berwarna-warni.</p>
+                </div>
+                <div class="grid-item">
+                    <img src="sanur.jpeg" alt="Pantai Sanur">
+                    <p>Pantai Sanur lebih tenang dan cocok untuk keluarga yang ingin menikmati matahari terbit yang indah. Pantai ini juga memiliki suasana yang lebih damai dan tenang.</p>
+                </div>
+            </div>
+            
+            <h3>Kawasan Budaya</h3>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="ubud.jpeg" alt="Ubud">
+                    <p>Ubud adalah sebuah kota kecil di Bali yang terletak di daerah pegunungan. Ubud menawarkan suasana yang lebih tenang dan damai, dengan pemandangan sawah terasering, hutan tropis, serta sungai-sungai yang indah.</p>
+                </div>
+                <div class="grid-item">
+                    <img src="pura.jpeg" alt="Pura Besakih">
+                    <p>Pura Besakih, dikenal sebagai "Pura Ibu", adalah pura terbesar dan paling suci di Bali, terletak di lereng Gunung Agung. Tempat ini dianggap sebagai pusat spiritual Bali dan merupakan tempat penting bagi masyarakat Hindu di pulau ini.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div>
+                <p><strong></strong></p>
+            </div>
+            <div>
+                <p><strong></strong></p>
+            </div>
+            <div>
+                <p><strong></strong></p>
+            </div>
+        </div>
+        
+        <!-- Form Kontak -->
+        <div class="contact-form">
+            <form action="https://www.example.com/send-message" method="POST">
+                <input type="text" name="name" placeholder="Nama Anda" required>
+                <input type="email" name="email" placeholder="Email Anda" required>
+                <textarea name="message" rows="5" placeholder="Pesan Anda" required></textarea>
+                <input type="submit" value="Kirim Pesan">
+            </form>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animasi saat Scroll
+        const contents = document.querySelectorAll('.content');
+        const options = {
+            threshold: 0.2
+        };
+        const observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            });
+        }, options);
+
+        contents.forEach(content => {
+            observer.observe(content);
+        });
+    </script>
+
+</body>
+</html>

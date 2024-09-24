@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Datang di Bali</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f7f7f7;
+            overflow-x: hidden;
+        }
+        /* Header */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('bali1.jpeg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 15em 0;
+            position: relative;
+            overflow: hidden;
+        }
+        header h1 {
+            font-size: 4em;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            margin-top: 30px;
+            background-color: #ff6347;
+            color: white;
+            text-transform: uppercase;
+            font-size: 1.2em;
+            border-radius: 50px;
+            border: 2px solid transparent;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        .cta-button:hover {
+            background-color: transparent;
+            color: #ff6347;
+            border-color: #ff6347;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .container {
+            padding: 60px 20px;
+        }
+        .content {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 1000px;
+            border-radius: 12px;
+            display: block;
+            margin: 0 auto 30px;
+            transition: transform 0.4s ease;
+        }
+        img:hover {
+            transform: scale(1.05);
+        }
+        h2 {
+            color: #ff6347;
+            font-size: 2.8em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        h3 {
+            color: #4682b4;
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        p {
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            text-align: justify;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        .grid-item {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .grid-item:hover {
+            transform: translateY(-10px);
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+        /* Footer Information */
+        footer .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        footer .footer-content div {
+            margin-bottom: 15px;
+        }
+        footer .social-icons {
+            margin-top: 20px;
+        }
+        footer .social-icons a {
+            text-decoration: none;
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: color 0.3s ease;
+        }
+        footer .social-icons a:hover {
+            color: #ff6347;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Selamat Datang di Bali</h1>
+        <a href="#explore" class="cta-button">Jelajahi Sekarang</a>
+    </header>
+
+    <!-- Konten -->
+    <div class="container" id="explore">
+        <div class="content">
+            <img src="bali.jpeg">
+            <h2>Keindahan Pulau Bali</h2>
+            <p>Bali adalah pulau di Indonesia yang terkenal sebagai salah satu destinasi wisata paling populer di dunia. Dikenal dengan pemandangan alam yang menakjubkan, budaya yang kaya, dan kehidupan pantai yang menyenangkan, Bali menawarkan pengalaman yang tidak terlupakan.</p>
+            
+            <h3>Pantai-pantai Terkenal</h3>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="https://www.example.com/pantai-kuta.jpg" alt="Pantai Kuta">
+                    <p>Pantai Kuta terkenal dengan ombak yang sempurna untuk berselancar serta suasana malam yang meriah. Tempat ini juga penuh dengan restoran, bar, dan toko-toko yang berwarna-warni.</p>
+                </div>
+                <div class="grid-item">
+                    <img src="https://www.example.com/pantai-sanur.jpg" alt="Pantai Sanur">
+                    <p>Pantai Sanur lebih tenang dan cocok untuk keluarga yang ingin menikmati matahari terbit yang indah. Pantai ini juga memiliki suasana yang lebih damai dan tenang.</p>
+                </div>
+            </div>
+            
+            <h3>Kawasan Budaya</h3>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="https://www.example.com/ubud.jpg" alt="Ubud">
+                    <p>Ubud adalah pusat seni dan budaya di Bali. Anda dapat menikmati galeri seni, pasar tradisional, serta yoga di lingkungan yang damai dan hijau.</p>
+                </div>
+                <div class="grid-item">
+                    <img src="https://www.example.com/pura-besakih.jpg" alt="Pura Besakih">
+                    <p>Pura Besakih, dikenal sebagai "Pura Ibu", adalah pura terbesar dan paling suci di Bali, terletak di lereng Gunung Agung.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <p><strong>Alamat:</strong> Jl. Raya Kuta No. 99, Bali</p>
+            </div>
+            <div>
+                <p><strong>Email:</strong> info@bali-tourism.com</p>
+            </div>
+            <div>
+                <p><strong>Telepon:</strong> +62 123 456 789</p>
+            </div>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2024 Jelajah Bali. Semua hak cipta dilindungi.</p>
+    </footer>
+</body>
+</html>
