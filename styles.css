@@ -1,0 +1,379 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0f1b2a;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    margin-bottom: 20px; /* Add some space below the logo */
+}
+
+.logo img {
+    max-width: 150px; /* Set a maximum width for the logo */
+    height: auto; /* Ensure it scales proportionally */
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensure content aligns to the center */
+}
+
+header {
+    background: url('header-image.jpg') no-repeat center center/cover;
+    height: 400px; /* Increased height for navbar and content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.header-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.logo {
+    color: white;
+    font-size: 2rem; /* Increased font size for logo */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.navbar {
+    width: 100%;
+    margin-bottom: 20px; /* Space between navbar and header content */
+    display: flex;
+    justify-content: center; /* Center the navbar links and search */
+    align-items: center; /* Vertically center items */
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center; /* Center the navbar links */
+    gap: 20px; /* Space between the links */
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    border-radius: 5px; /* Rounded corners for links */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #00bfa5; /* Change text color on hover */
+    transform: translateY(-2px);
+}
+
+.search-container {
+    display: flex;
+    align-items: center; /* Vertically center the search input and button */
+    margin-left: 20px; /* Space between links and search */
+}
+
+.search-input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.search-button {
+    background-color: #00bfa5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-left: 5px; /* Space between input and button */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #009f92; /* Darker shade on hover */
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+p {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.btn-primary {
+    background-color: #00bfa5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#event-calendar {
+    padding: 20px;
+    text-align: center;
+}
+
+#event-calendar h2 {
+    margin-bottom: 20px;
+}
+
+.calendar-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.month {
+    background-color: #1e2a38;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    margin: 10px;
+}
+
+.month h3 {
+    margin-bottom: 10px;
+}
+
+.month ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.month ul li {
+    margin-bottom: 10px;
+}
+
+#destination {
+    padding: 20px;
+    text-align: center;
+}
+
+.destination-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.destination-item {
+    background-color: #1e2a38;
+    padding: 20px;
+    border-radius: 10px;
+    width: 150px;
+    text-align: center;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.destination-item img {
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.destination-item:hover img {
+    transform: scale(1.1);
+}
+
+.destination-item p {
+    margin: 0;
+}
+
+/* Responsive Design for Navbar */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px; /* Space between links in vertical layout */
+    }
+
+    .nav-link {
+        width: 100%; /* Full width for links on mobile */
+        text-align: center;
+        padding: 15px; /* Increased padding for mobile */
+    }
+
+    .search-container {
+        margin-left: 0; /* No margin for mobile */
+        margin-top: 10px; /* Add space above search for mobile */
+    }
+
+    .search-input {
+        width: 100%; /* Full width for input on mobile */
+    }
+
+    .search-button {
+        width: auto; /* Auto width for button */
+    }
+}
+
+/* Gallery Section */
+/* Gallery Section */
+#gallery {
+    padding: 20px;
+    text-align: center;
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.gallery-item {
+    padding: 10px;
+    width: 200px;
+}
+
+.gallery-item img {
+    width: 100%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.1);
+}
+
+/* Modal (Lightbox) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Black background with transparency */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#caption {
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.2rem;
+}
+
+.footer-container {
+    background-color: #1e2a38;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.vote-section {
+    margin: 10px;
+}
+
+.vote-section h3 {
+    margin-bottom: 15px;
+}
+
+.vote-options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.vote-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    margin: 10px 0;
+}
+
+.vote-button {
+    background-color: #00bfa5;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.vote-button:hover {
+    background-color: #009f8b;
+}
+
+.vote-count {
+    margin-left: 10px;
+}
+
+.about-us-section {
+    margin-top: 20px;
+    text-align: left;
+    padding: 10px;
+}
+
+.about-us-section h3 {
+    margin-bottom: 10px;
+}
+
+.about-us-section p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #f0f0f0; /* A lighter color for better readability */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-about, .footer-language, .footer-social {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
